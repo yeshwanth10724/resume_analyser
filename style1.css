@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  .navbar {
+    background-color: #007bff;
+    padding: 12px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .navbar-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navbar-links li {
+    margin-left: 20px;
+  }
+  
+  .navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  
+  .navbar-links a:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Upload Form Styles */
+  .upload-container {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  .upload-container h1 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #007bff;
+  }
+  
+  #uploadForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #resumeFile {
+    padding: 10px;
+    border: 2px dashed #007bff;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  #resumeFile:hover {
+    background-color: #f0f8ff;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  #responseMessage {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #28a745;
+  }
