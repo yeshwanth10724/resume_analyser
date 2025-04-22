@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Resume</title>
+  <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-logo">AI Resume Analyzer</a>
+      <ul class="navbar-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="upload.html">Upload Resume</a></li>
+        <li><a href="ats-score.html">ATS Score</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="upload-container">
+    <h1>Upload Your Resume</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <input type="file" id="resumeFile" name="resume" accept=".pdf" required>
+      <button type="submit">Upload Resume</button>
+    </form>
+    <div id="responseMessage"></div>
+  </div>
+
+  <script>
+    
+    document.getElementById("uploadForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData();
+      const file = document.getElementById("resumeFile").files[0];
+      formData.append("resume", file);
+
+      const response = await fetch("http://127.0.0.1:5000/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      const result = await response.json();
+      document.getElementById("responseMessage").innerText = result.message || result.error;
+    });
+  </script>
+
+</body>
+</html>
